@@ -95,7 +95,13 @@ const RestaurantPage = () => {
             </Grid>
           </Grid>
           <div style={categoryStyle}>
-            <div style={isMobile ? { display: "flex", overflowX: "scroll" } : {display: "flex"}}>
+            <div
+              style={
+                isMobile
+                  ? { display: "flex", overflowX: "scroll" }
+                  : { display: "flex" }
+              }
+            >
               <h3
                 style={
                   selectedCategory === ""
@@ -116,7 +122,7 @@ const RestaurantPage = () => {
                 All
               </h3>
               {categoryList &&
-                categoryList.map((category,index) => (
+                categoryList.map((category, index) => (
                   <Link
                     to={category}
                     spy={true}
