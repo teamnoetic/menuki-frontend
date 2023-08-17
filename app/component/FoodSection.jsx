@@ -13,6 +13,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import Image from "next/image";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 
@@ -51,17 +52,46 @@ const FoodSection = ({ food }) => {
           food.food_section.map((food, index) => (
             <Grid item xs={12} md={6} lg={3} key={index}>
               <Card sx={{ maxWidth: isMobile ? 420 : 345 }}>
-                <CardMedia
-                  sx={{ height: 180 }}
-                  image={"https://admin.noeticit.tech" + food.img_url}
-                  title="green iguana"
-                />
                 <CardContent>
                   <Grid
                     container
                     justifyContent="space-between"
                     alignItems="center"
                   >
+                    <Grid item xs={8}>
+                      <Typography variant="h6">{food.name}</Typography>
+                      <Typography paragraph style={{ color: "#909090" }}>
+                        {food.desc}
+                      </Typography>
+                      {food.discount_available ? (
+                        <>
+                          <Typography variant="body2" color="text.secondary">
+                            <del>{food.actual_price}</del>
+                          </Typography>
+
+                          <Typography
+                            variant="body2"
+                            color="text.primary"
+                            sx={{ marginLeft: "5px" }}
+                          >
+                            {`${food.discounted_price} BDT`}
+                          </Typography>
+                        </>
+                      ) : (
+                        <>
+                          <Typography variant="body2" color="text.secondary">
+                            {`${food.actual_price} BDT`}
+                          </Typography>
+                        </>
+                      )}
+                    </Grid>
+                    <Grid item xs={4}>
+                      <Image
+                        src={"https://admin.noeticit.tech" + food.img_url}
+                        width={100}
+                        height={90}
+                      />
+                    </Grid>
                     <Grid item xs={4}>
                       <Chip
                         label={
@@ -77,21 +107,8 @@ const FoodSection = ({ food }) => {
                       />
                     </Grid>
                     <Grid item xs={8}>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {food.name}
-                      </Typography>
                       {food.discount_available ? (
                         <div style={{ display: "flex" }}>
-                          <Typography variant="body2" color="text.secondary">
-                            <del>{food.actual_price}</del>
-                          </Typography>
-                          <Typography
-                            variant="body"
-                            color="text.primary"
-                            sx={{ marginLeft: "5px" }}
-                          >
-                            {`${food.discounted_price} BDT`}
-                          </Typography>
                           {food.variants.length > 0 && (
                             <ExpandMore
                               expand={food.expanded}
@@ -105,13 +122,6 @@ const FoodSection = ({ food }) => {
                         </div>
                       ) : (
                         <div style={{ display: "flex" }}>
-                          <Typography
-                            variant="body"
-                            color="text.primary"
-                            sx={{ marginLeft: "5px" }}
-                          >
-                            {`${food.actual_price} BDT`}
-                          </Typography>
                           {food.variants.length > 0 && (
                             <ExpandMore
                               expand={food.expanded}
@@ -175,18 +185,14 @@ const FoodSection = ({ food }) => {
                         </div>
                       </div>
                     ))}
-                    <hr />
-                    <Typography paragraph>{food.desc}</Typography>
                   </CardContent>
                 </Collapse>
               </Card>
             </Grid>
           ))
         ) : (
-          <div style={{marginLeft:"1rem"}}>
-            <Typography>
-              Food not available
-            </Typography>
+          <div style={{ marginLeft: "1rem" }}>
+            <Typography>Food not available</Typography>
           </div>
         )}
       </Grid>
