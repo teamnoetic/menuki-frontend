@@ -99,7 +99,7 @@ const RestaurantPage = () => {
               style={
                 isMobile
                   ? { display: "flex", overflowX: "scroll" }
-                  : { display: "flex" }
+                  : { display: "flex", overflowX: "scroll",}
               }
             >
               <h3
