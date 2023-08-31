@@ -1,5 +1,5 @@
 export const cardStyle = {
-  maxWidth: 300,
+  maxWidth: 310,
   boxShadow: "-6px 12px 24px -7px rgba(0,0,0,0.75)",
   borderRadius: "2%",
   marginTop: "1.5rem",
@@ -18,7 +18,9 @@ export const ggstyle = {
   alignItems: "center",
   alignContent: "center",
   flexDirection: "row",
-  flexWrap: "wrap",
+  // flexWrap: "wrap",
+  overflowX: "auto", /* Enable horizontal scrolling */
+  whiteSpace: "nowrap", /* Prevent wrapping of flex items */
 };
 
 export const tag1Style = {
