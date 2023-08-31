@@ -20,10 +20,12 @@ export const headerStyle = {
 export const categoryStyle = {
   display: "flex",
   flexDirection: "row",
-  marginLeft: "10vw",
-  marginRight: "10vw",
   marginTop: "5vw",
   justifyContent: "space-between",
+  position: "sticky",
+  top: "100px",
+  backgroundColor: "white",
+  boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
 };
 
 export const carsoulStyle = {

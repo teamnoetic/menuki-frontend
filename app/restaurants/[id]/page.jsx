@@ -98,18 +98,18 @@ const RestaurantPage = () => {
             <div
               style={
                 isMobile
-                  ? { display: "flex", overflowX: "scroll" }
-                  : { display: "flex", overflowX: "scroll",}
+                  ? { display: "flex", flexGrow: 1, overflowX: "scroll", gap: 20, padding:'20px 0px 0px 0px' }
+                  : { display: "flex", flexGrow: 1, overflowX: "scroll", gap: 20 }
               }
             >
-              <h3
+              <h6
                 style={
                   selectedCategory === ""
                     ? {
                         ...selectedCategoryStyle,
                         paddingLeft: "10px",
                         paddingRight: "10px",
-                        marginTop: "0px",
+                        marginTop: "10px",
                       }
                     : {
                         marginLeft: "10px",
@@ -120,7 +120,7 @@ const RestaurantPage = () => {
                 onClick={(e) => handleCategorySelect("")}
               >
                 All
-              </h3>
+              </h6>
               {categoryList &&
                 categoryList.map((category, index) => (
                   <Link
@@ -133,22 +133,17 @@ const RestaurantPage = () => {
                   >
                     <h3
                       style={{
-                        paddingLeft: "20px",
-                        paddingRight: "20px",
-                        marginTop: "0px",
+                        // paddingLeft: "20px",
+                        // paddingRight: "20px",
+                        marginTop: "10px",
                         paddingTop: "10px",
+                        fontSize: ".8em",
+                        display:"inline-block",
+                        whiteSpace: "nowrap"
                       }}
                       onClick={(e) => handleCategorySelect(category)}
                     >
-                      <span
-                        style={
-                          selectedCategory == category
-                            ? selectedCategoryStyle
-                            : {}
-                        }
-                      >
-                        {category}
-                      </span>
+                      {category}
                     </h3>
                   </Link>
                 ))}
