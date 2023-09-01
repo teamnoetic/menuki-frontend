@@ -46,11 +46,11 @@ export default function Home() {
             <CircularProgress />
           </div>
         ) : (
-          discountPrice.length && (
+          discountPrice.length ? (
             <div style={divStyle}>
               <DiscountList discount_product={discountPrice} />
             </div>
-          )
+          ): (<div></div>)
         )}
         {loading ? (
           <div style={{ display: "flex", alignItems: "center", justifyContent:"center" }}>

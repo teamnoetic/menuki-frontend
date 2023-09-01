@@ -22,6 +22,14 @@ const RestaurantPage = () => {
   const [gg, setGG] = useState(false);
   const params = useParams();
 
+  const navStyle = {
+    borderBottom: "5px solid #32ce4c",
+    paddingBottom: "3px",
+    textDecoration: "none",
+    fontSize: "1.2rem",
+    color: "#32ce4c",
+  };
+
   const fetchData = async () => {
     const result = await axios.get(
       `https://admin.noeticit.tech/api/restaurant/${params.id}`
@@ -61,11 +69,19 @@ const RestaurantPage = () => {
               <div
                 style={isMobile ? { marginTop: "60px" } : { marginTop: "80px" }}
               >
-                <div sx={isMobile ? { height: "40vh" } : { height: "10vh" }}>
-                  <Carousel>
-                    <Paper
-                      sx={isMobile ? { height: "40vh" } : { height: "80vh" }}
-                    >
+                <div>
+                  <Carousel
+                    sx={{
+                      height: {
+                        xs: "200px",
+                        sm: "400px",
+                        md: "500px",
+                        lg: "600px",
+                      },
+                      width: "100%",
+                    }}
+                  >
+                    <Paper>
                       <Image
                         alt="gg"
                         src={`https://admin.noeticit.tech${restaurantInfo.cover_pic}`}
@@ -98,25 +114,29 @@ const RestaurantPage = () => {
             <div
               style={
                 isMobile
-                  ? { display: "flex", flexGrow: 1, overflowX: "scroll", gap: 20, padding:'20px 0px 0px 0px' }
-                  : { display: "flex", flexGrow: 1, overflowX: "scroll", gap: 20 }
+                  ? {
+                      display: "flex",
+                      flexGrow: 1,
+                      overflowX: "scroll",
+                      gap: 20,
+                      paddingTop: "20px",
+                    }
+                  : {
+                      display: "flex",
+                      flexGrow: 1,
+                      overflowX: "scroll",
+                      gap: 20,
+                      paddingTop: "20px",
+                    }
               }
             >
               <h6
-                style={
-                  selectedCategory === ""
-                    ? {
-                        ...selectedCategoryStyle,
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                        marginTop: "10px",
-                      }
-                    : {
-                        marginLeft: "10px",
-                        marginRight: "10px",
-                        marginTop: "10px",
-                      }
-                }
+                style={{
+                  ...selectedCategoryStyle,
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
+                  marginTop: "10px",
+                }}
                 onClick={(e) => handleCategorySelect("")}
               >
                 All
@@ -125,9 +145,10 @@ const RestaurantPage = () => {
                 categoryList.map((category, index) => (
                   <Link
                     to={category}
+                    activeStyle={navStyle}
                     spy={true}
                     smooth={true}
-                    offset={-80}
+                    offset={-190}
                     duration={500}
                     key={index}
                   >
@@ -138,8 +159,8 @@ const RestaurantPage = () => {
                         marginTop: "10px",
                         paddingTop: "10px",
                         fontSize: ".8em",
-                        display:"inline-block",
-                        whiteSpace: "nowrap"
+                        display: "inline-block",
+                        whiteSpace: "nowrap",
                       }}
                       onClick={(e) => handleCategorySelect(category)}
                     >
