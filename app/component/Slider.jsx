@@ -6,7 +6,7 @@ import { sliders } from "@/app/utils/fakeData";
 
 const Item = ({ item, isMobile }) => {
   return (
-    <Paper sx={isMobile ? { height: "40vh" } : { height: "80vh" }}>
+    <Paper>
       <Image alt="gg" src={item.img_url} fill />
     </Paper>
   );
@@ -18,7 +18,7 @@ const Slider = () => {
     <Grid container>
       <Grid item xs = {12}>
         <div style={isMobile ? { marginTop: "60px" } : { marginTop: "80px" }}>
-          <Carousel>
+          <Carousel sx={{height: {xs: '200px', sm:'400px', md: '500px', lg:'600px'}, width:'100%' }}>
             {sliders.map((item, i) => (
               <Item key={i} item={item} isMobile={isMobile} />
             ))}

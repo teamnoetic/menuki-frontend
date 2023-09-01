@@ -1,15 +1,16 @@
 import {
   MobilecardStyle,
   cardStyle,
+  gg1Style,
   ggstyle,
   locationTagStyle,
-  tag1Style
+  tag1Style,
 } from "@/app/styles/restaurantCard";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { Chip, Typography, useMediaQuery } from "@mui/material";
+import { Chip, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
-const RestaurantCard = ({restaurant}) => {
+const RestaurantCard = ({ restaurant }) => {
   const isMobile = useMediaQuery("(max-width: 425px)");
   return (
     <>
@@ -20,29 +21,27 @@ const RestaurantCard = ({restaurant}) => {
             width={isMobile ? 400 : 280}
             height={200}
             alt="gg"
-            src={"https://admin.noeticit.tech"+restaurant.image}
+            src={"https://admin.noeticit.tech" + restaurant.image}
           />
         </div>
+        <Grid container style={{ marginLeft: "10px" }}>
+          <Grid item xs={12}>
+            <Typography variant="h6" gutterBottom>
+              {restaurant.name}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Chip
+              style={locationTagStyle}
+              label={restaurant.location}
+              icon={<LocationOnIcon style={{ color: "white" }} />}
+            />
+          </Grid>
+        </Grid>
         <div style={ggstyle}>
-          <Typography variant="h6" gutterBottom>
-            {restaurant.name}
-          </Typography>
-        </div>
-        <div style={ggstyle}>
-          {
-            restaurant.tags.map((el,index)=>(
-              <Chip key={index} style={tag1Style} label={el} />
-
-            ))
-          }
-        </div>
-
-        <div style={ggstyle}>
-          <Chip
-            style={locationTagStyle}
-            label={restaurant.location}
-            icon={<LocationOnIcon style={{ color: "white" }} />}
-          />
+          {restaurant.tags.map((el, index) => (
+            <Chip key={index} style={tag1Style} label={el} />
+          ))}
         </div>
       </div>
     </>

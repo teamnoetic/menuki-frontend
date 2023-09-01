@@ -7,7 +7,7 @@ export const cardStyle = {
 
 export const MobilecardStyle = {
   maxWidth: 600,
-  boxShadow: "-6px 12px 24px -7px rgba(0,0,0,0.75)",
+  boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
   borderRadius: "2%",
   marginTop: "1.5rem",
 };
@@ -20,12 +20,19 @@ export const ggstyle = {
   flexDirection: "row",
   // flexWrap: "wrap",
   overflowX: "auto", /* Enable horizontal scrolling */
-  whiteSpace: "nowrap", /* Prevent wrapping of flex items */
+  // whiteSpace: "nowrap", /* Prevent wrapping of flex items */
 };
+
+export const gg1Style = {
+  display: "flex",
+  justifyContent: "space-between",
+  marginLeft:"15px",
+  marginRight:"5px"
+}
 
 export const tag1Style = {
   marginTop:"1rem",
-  marginLeft: "4px",
+  marginLeft:"4px",
   backgroundColor: "#34C840",
   color: "white",
 };

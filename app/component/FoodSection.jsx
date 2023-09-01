@@ -30,7 +30,6 @@ const ExpandMore = styled((props) => {
 const FoodSection = ({ food }) => {
   const [expanded, setExpanded] = useState([]);
   const isMobile = useMediaQuery("(max-width: 425px)");
-  console.log("food", food);
 
   const handleExpandClick = (index) => {
     const newExpandedList = [...food.food_section];
@@ -49,7 +48,7 @@ const FoodSection = ({ food }) => {
       <Divider sx={{ marginBottom: "1rem" }} />
       <Grid container spacing={2}>
         {food.food_section.length > 0 ? (
-          food.food_section.map((food, index) => (
+          food.food_section.map((food, index) => (      
             <Grid item xs={12} md={6} lg={3} key={index}>
               <Card sx={{ maxWidth: isMobile ? 420 : 345 }}>
                 <CardContent>
@@ -66,7 +65,7 @@ const FoodSection = ({ food }) => {
                       {food.discount_available ? (
                         <>
                           <Typography variant="body2" color="text.secondary">
-                            <del>{food.actual_price}</del>
+                            <del>{`From ${food.actual_price} `}</del>
                           </Typography>
 
                           <Typography
@@ -74,13 +73,15 @@ const FoodSection = ({ food }) => {
                             color="text.primary"
                             sx={{ marginLeft: "5px" }}
                           >
-                            {`${food.discounted_price} BDT`}
+                            {`From ${food.discounted_price} BDT`}
                           </Typography>
                         </>
                       ) : (
                         <>
-                          <Typography variant="body2" color="text.secondary">
-                            {`${food.actual_price} BDT`}
+                          <Typography variant="body2" color="text.secondary">{
+
+                          food.variants.length > 0 ? `From ${food.variants[0].actual_price} BDT` : `From ${food.actual_price} BDT` 
+                          }
                           </Typography>
                         </>
                       )}

@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ width: "100%", marginTop: "2rem" }}>
+        <div style={{ width: "100%", height:"100%", marginTop: "2rem" }}>
           <Slider />
         </div>
         <div style={divStyle}>
@@ -46,11 +46,11 @@ export default function Home() {
             <CircularProgress />
           </div>
         ) : (
-          discountPrice.length && (
+          discountPrice.length ? (
             <div style={divStyle}>
               <DiscountList discount_product={discountPrice} />
             </div>
-          )
+          ): (<div></div>)
         )}
         {loading ? (
           <div style={{ display: "flex", alignItems: "center", justifyContent:"center" }}>
