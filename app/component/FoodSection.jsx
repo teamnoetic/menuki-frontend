@@ -71,14 +71,14 @@ const FoodSection = ({ food }) => {
                           <Typography
                             variant="body2"
                             color="text.primary"
-                            sx={{ marginLeft: "5px" }}
+                            sx={{ fontWeight: "bold" }}
                           >
                             {`From ${food.discounted_price} BDT`}
                           </Typography>
                         </>
                       ) : (
                         <>
-                          <Typography variant="body2" color="text.secondary">{
+                          <Typography variant="body2" color="text.secondary" sx={{ fontWeight: "bold" }}>{
 
                           food.variants.length > 0 ? `From ${food.variants[0].actual_price} BDT` : `From ${food.actual_price} BDT` 
                           }
@@ -102,8 +102,8 @@ const FoodSection = ({ food }) => {
                         }
                         style={
                           food.is_available === "1"
-                            ? { backgroundColor: "green", color: "white" }
-                            : { backgroundColor: "red", color: "white" }
+                            ? { backgroundColor: "green", color: "white", marginTop:"5px" }
+                            : { backgroundColor: "red", color: "white" , marginTop:"5px"}
                         }
                       />
                     </Grid>

@@ -3,7 +3,7 @@ import { footerContent, footerLinks, mainFooterStyle } from "@/app/styles/footer
 
 const Footer = () => {
   return (
-    <div style={{ marginTop: "1.5rem" }}>
+    <div style={{ marginTop: "1.5rem", width: '100%' }}>
       <footer style={mainFooterStyle}>
         <div style={footerContent}>
           <p>&copy; All rights reserved.</p>

@@ -26,14 +26,14 @@ const RestaurantCard = ({ restaurant }) => {
         </div>
         <Grid container style={{ marginLeft: "10px" }}>
           <Grid item xs={12}>
-            <Typography variant="h6" gutterBottom>
+            <Typography style={{textOverflow: 'ellipsis'}} variant="h6" gutterBottom>
               {restaurant.name}
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Chip
               style={locationTagStyle}
-              label={restaurant.location}
+              label={restaurant.location.length < 30 ? restaurant.location : restaurant.location.slice(0,35) + '.....'}
               icon={<LocationOnIcon style={{ color: "white" }} />}
             />
           </Grid>

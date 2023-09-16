@@ -1,7 +1,7 @@
 export const mainFooterStyle = {
   backgroundColor: "#32ce4c",
   color: "#fff",
-  padding: "20px",
+  padding: "5px 10px 5px 10px",
 };
 
 export const footerContent = {
