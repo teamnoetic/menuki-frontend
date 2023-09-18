@@ -10,6 +10,11 @@ import {
   navbar,
 } from "@/app/styles/nav";
 const Nav = () => {
+
+  const handleClick = (e) =>{
+    route.push("/")
+
+  }
   const route = useRouter();
   const isMobile = useMediaQuery("(max-width: 425px)");
   return (
@@ -20,7 +25,7 @@ const Nav = () => {
             ? { ...logo_container, ...contentStyle }
             : { ...logo_container }
         }
-        onClick={() => route.push("/")}
+        onClick={(e) => handleClick(e)}
       >
         <img
           src="/assets/images/logo.png"
