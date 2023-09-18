@@ -37,7 +37,7 @@ export const logoStyle = {
 };
 
 export const mobileLogoStyle = {
-  maxHeight: "10rem",
+  maxHeight: "12vh",
   margin: "auto",
 };
 

@@ -23,7 +23,7 @@ export const categoryStyle = {
   marginTop: "5vw",
   justifyContent: "space-between",
   position: "sticky",
-  top: "100px",
+  top: "60px",
   backgroundColor: "white",
   boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
 };
