@@ -118,7 +118,7 @@ const FoodSection = ({ food }) => {
                               aria-expanded={expanded}
                               aria-label="show more"
                             >
-                              <ExpandMoreIcon />
+                              <ExpandMoreIcon style={{color:'#32ce4c'}} />
                             </ExpandMore>
                           )}
                         </div>
@@ -131,7 +131,7 @@ const FoodSection = ({ food }) => {
                               aria-expanded={expanded}
                               aria-label="show more"
                             >
-                              <ExpandMoreIcon />
+                              <ExpandMoreIcon style={{color:'#32ce4c'}} />
                             </ExpandMore>
                           )}
                         </div>
