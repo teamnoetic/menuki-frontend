@@ -21,7 +21,7 @@ const RestaurantCard = ({ restaurant }) => {
             width={isMobile ? 400 : 280}
             height={200}
             alt="gg"
-            src={"https://admin.noeticit.tech" + restaurant.image}
+            src={"https://test.abid.com.bd" + restaurant.image}
           />
         </div>
         <Grid container style={{ marginLeft: "10px" }}>

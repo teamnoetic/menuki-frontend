@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env:{
-        base_url: "https://admin.noeticit.tech",
+        base_url: "https://test.abid.com.bd/api",
     },
     images: {
-        domains: ['admin.noeticit.tech'], // Add your domain(s) to this array
+        domains: ['test.abid.com.bd'], // Add your domain(s) to this array
     },
 }
 

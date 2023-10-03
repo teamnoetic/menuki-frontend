@@ -21,7 +21,7 @@ export default function Home() {
   const fetchData = async () => {
     setLoading(true);
     const result = await axios.get(
-      "https://admin.noeticit.tech/api/restaurants"
+      "https://test.abid.com.bd/api/restaurants"
     );
     setData(result?.data);
     setAllRestaurant(result?.data?.all_restaurant);

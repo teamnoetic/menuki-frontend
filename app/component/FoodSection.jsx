@@ -88,7 +88,7 @@ const FoodSection = ({ food }) => {
                     </Grid>
                     <Grid item xs={4}>
                       <Image
-                        src={food.img_url ?  "https://admin.noeticit.tech" + food.img_url : "/assets/images/base.jpg"}
+                        src={food.img_url ?  "https://test.abid.com.bd" + food.img_url : "/assets/images/base.jpg"}
                         width={100}
                         height={90}
                         alt="foods"

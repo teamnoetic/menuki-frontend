@@ -40,7 +40,7 @@ const RestaurantPage = () => {
 
   const fetchData = async () => {
     const result = await axios.get(
-      `https://admin.noeticit.tech/api/restaurant/${params.id}`
+      `https://test.abid.com.bd/api/restaurant/${params.id}`
     );
 
     setRestaurantInfo(result.data);
@@ -89,7 +89,7 @@ const RestaurantPage = () => {
                   <Paper>
                     <Image
                       alt="gg"
-                      src={`https://admin.noeticit.tech${restaurantInfo.cover_pic}`}
+                      src={`https://test.abid.com.bd${restaurantInfo.cover_pic}`}
                       fill
                     />
                   </Paper>
