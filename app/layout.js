@@ -15,6 +15,20 @@ export default function RootLayout({ children }) {
   return (
     <ThemeProvider theme={theme}>
       <html lang="en">
+        <head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-6MNJVBJTYM" />
+          
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-6MNJVBJTYM');
+              `,
+          }}
+        />
+        </head>
         <body className={inter.className}>
           <Nav />
           {children}
