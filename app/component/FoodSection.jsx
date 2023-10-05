@@ -97,12 +97,12 @@ const FoodSection = ({ food }) => {
                     <Grid item xs={4}>
                       <Chip
                         label={
-                          food.is_available === "1"
+                          food.is_available == "1"
                             ? "Available"
                             : "Not Available"
                         }
                         style={
-                          food.is_available === "1"
+                          food.is_available == "1"
                             ? { backgroundColor: "green", color: "white", marginTop:"5px" }
                             : { backgroundColor: "red", color: "white" , marginTop:"5px"}
                         }
