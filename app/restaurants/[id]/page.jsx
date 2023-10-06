@@ -21,6 +21,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Link } from "react-scroll";
 import Carousel from "react-material-ui-carousel";
+import { MenuKiAPI } from "@/app/utils/ApiConfig";
 
 const RestaurantPage = () => {
   const [categoryList, setCategoryList] = useState([]);
@@ -39,10 +40,8 @@ const RestaurantPage = () => {
   };
 
   const fetchData = async () => {
-    const result = await axios.get(
-      `https://test.abid.com.bd/api/restaurant/${params.id}`
-    );
 
+    const result = await MenuKiAPI.get(`/restaurant/${params.id}`)
     setRestaurantInfo(result.data);
     setFoodItem(result.data.food_detail);
     setGG(true);

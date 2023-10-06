@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const MenuKiAPI = axios.create({
-    baseURL: process.env.URL,
+    baseURL: "https://test.abid.com.bd/api",
     headers: {
       'Content-Type': 'application/json',
     },

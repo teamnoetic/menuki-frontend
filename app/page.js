@@ -6,6 +6,7 @@ import AboutSection from "@/app/component/AboutSection";
 import AllRestaurant from "@/app/component/AllRestaurant";
 import DiscountList from "@/app/component/DiscountList";
 import Slider from "@/app/component/Slider";
+import { MenuKiAPI } from "./utils/ApiConfig";
 
 const divStyle = {
   width: "100%",
@@ -20,9 +21,7 @@ export default function Home() {
 
   const fetchData = async () => {
     setLoading(true);
-    const result = await axios.get(
-      "https://test.abid.com.bd/api/restaurants"
-    );
+    const result = await MenuKiAPI.get(`/restaurants`)
     setData(result?.data);
     setAllRestaurant(result?.data?.all_restaurant);
     setDiscountPrice(result?.data?.discount_product);
