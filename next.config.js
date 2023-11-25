@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env:{
-        base_url: "https://test.abid.com.bd/api",
+        base_url: "https://menuki.dlsoftpro.com/api",
     },
     images: {
-        domains: ['test.abid.com.bd'], // Add your domain(s) to this array
+        domains: ['menuki.dlsoftpro.com'], // Add your domain(s) to this array
     },
 }
 

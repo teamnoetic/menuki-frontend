@@ -12,7 +12,7 @@ const CommonCard = ({cardInfo}) => {
           width={310}
           height={250}
           alt="gg"
-          src={"https://test.abid.com.bdh"+cardInfo.img_url}
+          src={"https://menuki.dlsoftpro.com"+cardInfo.img_url}
         />
       </div>
       <div style={ggstyle}>

@@ -88,7 +88,7 @@ const RestaurantPage = () => {
                   <Paper>
                     <Image
                       alt="gg"
-                      src={`https://test.abid.com.bd${restaurantInfo.cover_pic}`}
+                      src={`https://menuki.dlsoftpro.com${restaurantInfo.cover_pic}`}
                       fill
                     />
                   </Paper>
